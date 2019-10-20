@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Listado de riegos del sensor Nro. {{this.rServ.dispositivo.dispositivoId}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+        <ion-list *ngFor="let r of this.rServ.listadoRiegos">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <p *ngIf="r.apertura==0">Aper.</p>
+                    <p *ngIf="r.apertura!=0">Cier.</p>
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{r.fecha|fechaYhora}}</h2>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

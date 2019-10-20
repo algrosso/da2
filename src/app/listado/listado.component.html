@@ -1,0 +1,13 @@
+<ion-list *ngFor="let dispositivo of this.aServ.listadoDispositivos">
+    <ion-item>
+        <ion-avatar slot="start">
+            <img src="assets/img/sensor-temp.png">
+        </ion-avatar>
+        <ion-button button-Type='string' fill="clear">
+            <ion-label (click)="editarDispositivo(dispositivo)">
+                <h2>{{dispositivo.nombre}}</h2>
+                <h3>{{dispositivo.ubicacion}}</h3>
+            </ion-label>
+        </ion-button>
+    </ion-item>
+</ion-list>

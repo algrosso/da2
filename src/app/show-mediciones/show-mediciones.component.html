@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Listado de mediciones del sensor Nro. {{this.mServ.dispositivo.dispositivoId}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+        <ion-list *ngFor="let m of this.mServ.listadoMediciones">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <p>{{this.mServ.listadoMediciones.indexOf(m)+1}}</p>
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{m.fecha|fechaYhora}}</h2>
+                    <h3>{{m.valor|kpa}}</h3>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
